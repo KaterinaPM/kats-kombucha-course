@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why Moms Love This Program</title>
+  <title>Kat's Kombucha Online Course</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,104 +13,538 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #fff8f5;
+      background: #faf7f2;
       color: #2d2d2d;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 48px 24px;
     }
 
-    .card {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      max-width: 680px;
-      width: 100%;
-      padding: 48px 52px;
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #3d2b1f 0%, #6b4226 100%);
+      color: #fff;
+      text-align: center;
+      padding: 72px 24px 60px;
     }
 
-    h2 {
-      font-size: 1.75rem;
+    .hero .label {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      margin-bottom: 20px;
+      color: #f5d9a8;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
       font-weight: 800;
-      color: #c0392b;
-      margin-bottom: 28px;
-      line-height: 1.3;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #fff;
     }
 
-    ul {
-      list-style: none;
-      margin-bottom: 32px;
+    .hero h1 span {
+      color: #f5d9a8;
     }
 
-    ul li {
-      padding: 10px 0 10px 36px;
-      position: relative;
-      font-size: 1rem;
-      line-height: 1.55;
-      border-bottom: 1px solid #f2e8e5;
-    }
-
-    ul li:last-child {
-      border-bottom: none;
-    }
-
-    ul li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      color: #e74c3c;
-      font-weight: 800;
-      font-size: 1rem;
-    }
-
-    ul li strong {
-      color: #1a1a1a;
-    }
-
-    blockquote {
-      background: #fff3f0;
-      border-left: 4px solid #e74c3c;
-      border-radius: 0 8px 8px 0;
-      padding: 20px 24px;
-      font-style: italic;
-      font-size: 0.97rem;
+    .hero p {
+      font-size: 1.1rem;
       line-height: 1.65;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #c8842a;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #a86820;
+    }
+
+    /* PHOTO STRIP */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      height: 320px;
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* SECTION */
+    .section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #c8842a;
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #2d1a0e;
+    }
+
+    .section > p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    /* MODULES */
+    .modules {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .module {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .module-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: #fdf0db;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #c8842a;
+    }
+
+    .module h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #2d1a0e;
+      margin-bottom: 8px;
+    }
+
+    .module p {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* PHOTO + TEXT SPLIT */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .split img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .split-text .section-label { margin-bottom: 10px; }
+    .split-text h2 {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 800;
+      color: #2d1a0e;
+      margin-bottom: 14px;
+    }
+    .split-text p {
+      font-size: 0.97rem;
+      line-height: 1.7;
       color: #555;
     }
 
-    @media (max-width: 600px) {
-      .card {
-        padding: 32px 24px;
+    .shipping-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff3dc;
+      border: 1px solid #f5d9a8;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 0.88rem;
+      color: #7a4f1a;
+      margin-top: 20px;
+    }
+
+    /* PRICING */
+    .pricing-section {
+      background: #2d1a0e;
+      color: #fff;
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .pricing-section .section-label {
+      color: #f5d9a8;
+    }
+
+    .pricing-section h2 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .pricing-section > p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.65;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .pricing-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: left;
+    }
+
+    .pricing-card.featured {
+      background: #c8842a;
+      border-color: #c8842a;
+    }
+
+    .pricing-card .card-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f5d9a8;
+      margin-bottom: 12px;
+    }
+
+    .pricing-card.featured .card-label {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .pricing-card .price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .pricing-card .price-note {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pricing-card ul li {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.45;
+    }
+
+    .pricing-card ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #f5d9a8;
+      font-weight: 700;
+    }
+
+    .pricing-card.featured ul li::before {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .guarantee {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 16px 24px;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .guarantee-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .guarantee p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+
+    .guarantee strong {
+      color: #f5d9a8;
+    }
+
+    /* TESTIMONIAL */
+    .testimonial-section {
+      background: #fff;
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    blockquote {
+      background: #faf7f2;
+      border-left: 4px solid #c8842a;
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 14px;
+      font-style: normal;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #c8842a;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a0f08;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* DIVIDER */
+    hr.divider {
+      border: none;
+      border-top: 1px solid #ede6dc;
+      margin: 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .photo-strip {
+        height: 200px;
       }
 
-      h2 {
-        font-size: 1.4rem;
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .split img {
+        height: 260px;
+      }
+
+      .module {
+        flex-direction: column;
+        gap: 12px;
+        padding: 22px 20px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h2>Why Moms Love This Program:</h2>
-    <ul>
-      <li><strong>Truly mom-friendly workouts</strong> that start easy and progressively challenge you</li>
-      <li><strong>Zero equipment needed</strong> - just your body weight and determination</li>
-      <li><strong>Kid-friendly routines</strong> they can join or play nearby while you exercise</li>
-      <li><strong>Family-approved meal plans</strong> that don't require cooking separate meals</li>
-      <li><strong>Budget-conscious options</strong> using ingredients you already have</li>
-      <li><strong>Addresses postpartum concerns</strong> that generic fitness programs ignore</li>
-      <li><strong>Supportive community</strong> that understands exactly what you're going through</li>
-      <li><strong>One-time payment</strong> - never worry about recurring charges or contracts</li>
-    </ul>
-    <blockquote>
-      "The Facebook group alone is worth the price! Having 66,000 moms cheering you on, sharing recipes, and understanding your struggles is incredibly motivating. I've made real friends who keep me accountable."
-    </blockquote>
-    <p style="margin-top: 28px; font-size: 1rem; color: #888; text-align: center;">TEST TEST TEST NEW TEXT</p>
-    <p style="margin-top: 16px; text-align: center; font-size: 1.4rem; line-height: 1.8;">❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
-    <p style="margin-top: 20px; text-align: center; font-size: 1.5rem; font-weight: 800; color: #c0392b; letter-spacing: 0.5px;">YOU'RE DOING GREAT SWEETIE</p>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="label">Online Course</div>
+    <h1>Kat's <span>Kombucha</span><br>Online Course</h1>
+    <p>Brew your own delicious, gut-friendly kombucha at home — from your very first SCOBY to your own signature flavours. No experience needed.</p>
+    <a href="#course" class="btn-primary">Start Brewing →</a>
+  </section>
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip">
+    <img src="images/kombucha-jars.jpg" alt="Kombucha jars fermenting">
+    <img src="images/kombucha-counter.jpg" alt="Kombucha brewing setup">
+    <img src="images/kombucha-bottle.jpg" alt="Finished kombucha bottle">
   </div>
+
+  <!-- COURSE MODULES -->
+  <section class="section" id="course">
+    <div class="section-label">What you'll learn</div>
+    <h2>5 Modules — From Zero to Brewing</h2>
+    <p>A step-by-step journey that takes you from complete beginner to confidently brewing batch after batch of your own kombucha.</p>
+
+    <div class="modules">
+      <div class="module">
+        <div class="module-num">1</div>
+        <div>
+          <h3>Getting Started: Your Starter Pack</h3>
+          <p>Unbox and understand your SCOBY starter kit. Learn what a SCOBY is, why it matters, and how to handle it with care. We cover all the equipment you'll need and how to set up a clean brewing environment.</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <div class="module-num">2</div>
+        <div>
+          <h3>First Fermentation</h3>
+          <p>Brew your first batch of sweet tea, introduce your SCOBY, and learn to read the signs of a healthy ferment. Understand temperature, timing, and what to look (and smell) for during the 7–14 day fermentation window.</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <div class="module-num">3</div>
+        <div>
+          <h3>Second Fermentation & Flavouring</h3>
+          <p>This is where the magic happens. Add fruit, herbs, or spices to create your own flavour combinations — from classic ginger-lemon to oolong with apricot. Learn how to build carbonation safely and beautifully.</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <div class="module-num">4</div>
+        <div>
+          <h3>Bottling & Storage</h3>
+          <p>Strain, bottle, and store your finished kombucha like a pro. We cover the right bottles, fridge storage, how long it keeps, and how to share it with friends (with a proper label, of course).</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <div class="module-num">5</div>
+        <div>
+          <h3>Maintaining Your SCOBY & Scaling Up</h3>
+          <p>Keep your SCOBY hotel thriving, troubleshoot common issues, and build a continuous brewing rhythm. By the end of this module you'll have a self-sustaining home brewery and a growing collection of kombucha you actually love.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- STARTER PACK SPLIT -->
+  <div class="split">
+    <img src="images/kombucha-setup.jpg" alt="Kombucha starter pack and setup">
+    <div class="split-text">
+      <div class="section-label">Starter Pack</div>
+      <h2>Everything You Need to Begin</h2>
+      <p>Order the optional kombucha starter pack — shipped directly to your door. It includes a live SCOBY, starter tea, and a guide card so you can follow along with Module 1 from day one.</p>
+      <div class="shipping-note">
+        🌍 Ships within <strong>Europe only</strong> &nbsp;·&nbsp; Not available in UK or US
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-label">Pricing</div>
+    <h2>Simple, One-Time Access</h2>
+    <p>Pay once and get full access to all 5 modules for a full year. No subscriptions, no hidden fees.</p>
+
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <div class="card-label">Course Only</div>
+        <div class="price">€97</div>
+        <div class="price-note">one-time payment · 12 months access</div>
+        <ul>
+          <li>All 5 video modules</li>
+          <li>Written guides & recipes</li>
+          <li>Troubleshooting section</li>
+          <li>12 months from purchase date</li>
+          <li>7-day money-back guarantee</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="card-label">Course + Community</div>
+        <div class="price">€97 <span style="font-size:1.1rem;font-weight:400">+ €15/mo</span></div>
+        <div class="price-note">course is one-time · community billed monthly</div>
+        <ul>
+          <li>Everything in Course Only</li>
+          <li>Private brewing community</li>
+          <li>Monthly live Q&amp;A with Kat</li>
+          <li>Share your brews &amp; get feedback</li>
+          <li>Cancel community anytime</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guarantee">
+      <div class="guarantee-icon">🛡️</div>
+      <p><strong>100% Money-Back Guarantee</strong><br>Not happy? Email within <strong>7 days of purchase</strong> for a full refund — no questions asked.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section">
+    <blockquote>
+      "I never thought I could make kombucha at home — it always seemed like something you needed special equipment or years of experience for. Kat's course broke it down so simply. My first batch was ready in two weeks and it tasted incredible. Now I can't stop experimenting with new flavours!"
+      <cite>— Early student, Amsterdam</cite>
+    </blockquote>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Kat's Kombucha · Starter pack ships within Europe only (excludes UK &amp; US) · Questions? Get in touch.</p>
+  </footer>
+
 </body>
 </html>
