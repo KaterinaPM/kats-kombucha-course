@@ -368,6 +368,75 @@
       color: #c8842a;
     }
 
+    /* FAQ */
+    .faq-section {
+      background: #faf7f2;
+      padding: 64px 24px;
+    }
+
+    .faq-section .inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-section .section-label {
+      margin-bottom: 12px;
+    }
+
+    .faq-section h2 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      color: #2d1a0e;
+      margin-bottom: 40px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 0;
+      border-bottom: 1px solid #ede6dc;
+      padding: 28px 0;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid #ede6dc;
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2d1a0e;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .faq-item .tag {
+      display: inline-block;
+      background: #fdf0db;
+      color: #a86820;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .faq-item .tag.warn {
+      background: #fdecea;
+      color: #c0392b;
+    }
+
     /* FOOTER */
     footer {
       background: #1a0f08;
@@ -540,6 +609,49 @@
       <cite>— Early student, Amsterdam</cite>
     </blockquote>
   </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="inner">
+      <div class="section-label">FAQ</div>
+      <h2>Kombucha Questions, Answered</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="tag">Normal</div>
+          <h3>My SCOBY looks dark brown and has strings hanging from it — is something wrong?</h3>
+          <p>Totally normal! Those dark strings are yeast strands, and they're a sign of a healthy, active culture. SCOBYs also naturally darken and develop brown patches over time as they age and absorb tannins from the tea. Uneven edges, holes, and layers are all fine too. None of this affects the quality of your brew.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="tag">Normal</div>
+          <h3>It smells really vinegary and sour. Is that supposed to happen?</h3>
+          <p>Yes — that sharp, tangy, vinegary smell is exactly what you want. It means your kombucha is fermenting well and the acidity is building up. The longer it ferments, the more pronounced the sourness. If you prefer a milder taste, simply bottle it earlier in the fermentation cycle.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="tag warn">Watch out</div>
+          <h3>How do I know if my batch has gone bad and I should throw it out?</h3>
+          <p>The main warning sign is <strong>fuzzy mold</strong> — green, black, pink, or white fuzzy spots growing on the surface of the SCOBY or the liquid. This is different from the thin, smooth film of a new SCOBY forming on top. A musty or rotten smell (clearly distinct from the normal vinegar tang) is another red flag. If you see any fuzzy growth, discard the entire batch including the SCOBY and start fresh. When in doubt, trust your nose.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="tag">Science bit</div>
+          <h3>Where does the kombucha culture actually live — in the mushroom or in the liquid?</h3>
+          <p>In both! The solid mat (often called the "mushroom" or pellicle) is a cellulose biofilm that bacteria build as a byproduct of fermentation — bacteria and yeast live inside it. But the liquid surrounding it — the starter tea — is equally alive and packed with the same active cultures. This is why you always save some liquid from a previous batch: it carries enough bacteria and yeast to start a new ferment entirely on its own, even without the physical mat.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="tag">Good to know</div>
+          <h3>Do I need the physical SCOBY mat to brew a new batch?</h3>
+          <p>Not necessarily. The starter tea (the liquid from your previous batch) contains enough living bacteria and yeast to inoculate new sweet tea. If you start with good starter tea, a new pellicle will form on the surface within a few days — even without a mother SCOBY. That said, having a healthy SCOBY mat does give your ferment a head start, which is why we include one in the starter pack.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
 
   <!-- FOOTER -->
   <footer>
